@@ -42,10 +42,6 @@ $app->singleton(
 );
 
 $app->singleton(
-    "App\Contracts\PhotosServiceInterface",
-    "App\Services\PhotosService"
-);
-$app->singleton(
     "App\Contracts\PostsServiceInterface",
     "App\Services\PostsService"
 );

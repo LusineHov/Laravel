@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Learn Angular</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js" ></script>
+
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/ng-file-upload-shim.min.js"></script>
+	<script type="text/javascript" src="js/ng-file-upload.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="config/config.js"></script>
+	<script type="text/javascript" src="controllers/aboutController.js"></script>
+	<script type="text/javascript" src="controllers/homeController.js"></script>
+	<script type="text/javascript" src="controllers/postController.js"></script>
+	<script type="text/javascript" src="controllers/settingsController.js"></script>
+	<script type="text/javascript" src="controllers/indexController.js"></script>
+	<script type="text/javascript" src="controllers/loginController.js"></script>
+	<script type="text/javascript" src="controllers/registerController.js"></script>
+	<script type="text/javascript" src="controllers/resetController.js"></script>
+	<script type="text/javascript" src="controllers/emailController.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                    &nbsp;
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
+                	<li ng-hide="checkStorage()" ng-class="{ active: isCurrentPath('/login') }"><a href="#/login">Login</a></li>
+                    <li ng-hide="checkStorage()" ng-class="{ active: isCurrentPath('/register') }"><a href="#/register">Register</a></li>
+                	<li ng-show="checkStorage()" role="presentation" ng-class="{ active: isCurrentPath('/home') }"><a href="#/home">Home</a></li>
+                    <li ng-show="checkStorage()" role="presentation" ng-class="{ active: isCurrentPath('/about') }"><a href="#/about">About</a></li>
+                    <li ng-show="checkStorage()" role="presentation" ng-class="{ active: isCurrentPath('/posts') || isCurrentPath('/posts/create') || isCurrentPath('/posts/{{id}}')}"><a href="#/posts">Posts</a></li>
+                    <li ng-show="checkStorage()" class="dropdown" ng-class="{ active: isCurrentPath('/settings') || isCurrentPath('/settings/name/edit') || isCurrentPath('/settings/email/edit') || isCurrentPath('/settings/password/edit')}">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Lusine <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#/settings">
+                                    Profile Settings
+                                </a>
+                                <a href="#/" ng-click="logout()">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-view>
+    	
+    </div>
+	<!-- Scripts -->
+    <!-- <script src="/js/app.js"></script> -->
+</body>
+</html>

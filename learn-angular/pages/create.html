@@ -1,0 +1,29 @@
+<div class="container container1">
+	<h1>Add Post</h1>
+	<ul ng-if="ResponseDetails" class="alert alert-danger">
+		<li ng-if="ResponseDetails.title[0]">{{ResponseDetails.title[0]}}</li>
+		<li ng-if="ResponseDetails.content[0]">{{ResponseDetails.content[0]}}</li>
+	</ul>
+	<form ng-submit="addnewpost()">
+		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+		<div class="form-group">
+			<input class="form-control" type="text" placeholder="Post Title" ng-model="customer.title">
+		</div>
+		
+		<div class="form-group">
+			<!-- <input class="form-control" type="file" name="image" ng-model="image"> -->
+			<input type="file" file-model="customer.image"/>
+		</div>
+		<div class="form-group">
+			<select class="form-control" ng-model="customer.category_id">
+			  	<option ng-repeat="category in categories">{{category.name}}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<textarea class="form-control" rows="8" placeholder="Post Content" ng-model="customer.content"></textarea>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit">Add Post</button>
+		</div>
+	</form>
+</div>

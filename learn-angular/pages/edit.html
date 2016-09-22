@@ -1,0 +1,29 @@
+<div class="container container1">	
+	<h1>
+		Edit Post : <a href="#/posts/{{ post.id}}">{{ post.title}}</a>
+	</h1>
+	<form ng-submit="updatepost()">
+		<div class="form-group">
+			<input class="form-control" ng-model="customer.title" value="{{post.title}}" type="text" name="title" placeholder="Post Title" >
+		</div>
+		<div class="form-group">
+			<input id="image_value1" class="form-control" type="file" file-model="customer.image">
+				<div ng-if="post.image" class="img" id="edit_img">
+					<img ng-src="/assets/images/{{post.image}}" width="50%" height="auto">
+				</div>
+			<input class="btn btn-primary" id="delete_image" name="delete_image" type="button" value="Delete image" ng-click="deleteimage()">
+			<input id="image_value" type="hidden" name="hidden_image" value="image">
+		</div>
+		<div class="form-group">
+			<select ng-model="customer.category_id" class="form-control" name="category_id">
+			  	<option ng-repeat="category in categories">{{category.name}}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<textarea ng-model="customer.content" class="form-control" rows="8" name="content" placeholder="Post Content">{{post.content}}</textarea>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit">Update Post</button>
+		</div>
+	</form>
+</div>

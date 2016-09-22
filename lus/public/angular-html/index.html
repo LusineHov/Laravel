@@ -1,0 +1,26 @@
+<div class="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- BEGIN: snippets list -->
+				<div id="snippets">
+					
+					<div ng-repeat="post in posts" class="single-snippet">
+						<div class="title">
+							<p><a href="/post/{{post.id}}">{{post.title}}</a></p>
+							
+						</div>
+						<div class="meta">
+							<div class="datetime">Updated at {{post.updated_at}} </div>
+						</div>			
+					</div>
+					
+				</div>
+				<!-- END: snippets list -->
+			</div>
+			<div class="col-md-6">
+				<div ng-bind-html="article"></div>
+			</div>
+		</div>
+	</div>
+</div>

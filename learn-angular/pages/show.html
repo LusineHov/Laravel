@@ -1,0 +1,38 @@
+<div class="container container1">
+		<!-- <p class="alert alert-danger" ng-if="error">
+			{{error}}
+		</p> -->
+		<h1>
+			posts's Details
+		</h1>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="post">
+					<h1>
+						{{post.title}}
+					</h1>
+					<div ng-if="post.image" class="img">
+						<img ng-src="/assets/images/{{post.image}}" width="100%" height="auto">
+					</div>
+					<p class="postcontent">
+						{{post.content}}
+					</p>
+					<p>
+						<span>Category: </span>{{post.category_id}}
+					</p>
+					<p>
+						<span>Created by: </span>{{post.user_id}}
+					</p>
+					<p>
+						<span>Created at: </span>{{post.created_at}}
+					</p>
+					<p>
+						<span>Updated at: </span>{{post.updated_at}}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div ng-if="!error" class="editbtn">
+			<a class="btn btn-default" href="#/posts/{{post.id}}/edit" role="button">Edit Post</a>
+		</div>
+	</div>

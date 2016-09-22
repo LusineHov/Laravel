@@ -1,0 +1,43 @@
+<div class="container">
+	<div class=" container3">
+		<form>
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<h3>Change Your Name</h3>
+			<div class="form-group">
+				<input value="{{settings.name}}" class="form-control" type="text" name="name">
+			</div>
+			<h3>Change Your E-Mail Address</h3>
+			<div class="form-group">
+				<input value="{{settings.email}}" class="form-control" type="email" name="email">
+			</div>
+			<h3>Change Your Password</h3>
+			<div class="row">
+				<div class="col-xs-3">
+					<p>Current</p>
+				</div>
+				<div class="col-xs-9 form-group">
+					<input class="form-control" type="password" name="old_password">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<p>New</p>
+				</div>
+				<div class="col-xs-9 form-group">
+					<input class="form-control" type="password" name="password">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<p>Confirm</p>
+				</div>
+				<div class="col-xs-9 form-group">
+					<input class="form-control" type="password" name="password_confirmation">
+				</div>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">Save</button>
+			</div>
+		</form>
+	</div>
+</div>
